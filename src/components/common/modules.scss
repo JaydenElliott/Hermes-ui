@@ -1,8 +1,22 @@
-$grey-dark: rgb(32, 34, 37);
-$grey-light: rgb(47, 49, 54);
-$grey-lighter: rgb(55, 57, 62);
+/*
 
-/* Flex global styles */
+Colour Theme
+
+*/
+
+// $grey-dark: rgb(32, 34, 37);
+// $grey-light: rgb(47, 49, 54);
+// $grey-lighter: rgb(55, 57, 62);
+
+$grey-dark: rgb(43, 47, 53);
+$grey-light: rgb(51, 58, 77);
+$grey-lighter: rgb(67, 75, 101);
+
+/* 
+
+  Alignment
+
+*/
 .cja {
   display: flex;
   flex-direction: column;
@@ -48,7 +62,11 @@ $grey-lighter: rgb(55, 57, 62);
   cursor: pointer;
 }
 
-/* Animations */
+/* 
+
+Animations 
+
+*/
 
 .scale-animation {
   -webkit-transition: 0.15s ease-in-out;
@@ -60,3 +78,13 @@ $grey-lighter: rgb(55, 57, 62);
     transform: scale(1.02);
   }
 }
+
+/*
+
+Sizes
+
+
+*/
+
+$header-height: 40px;
+$footer-height: 100px;

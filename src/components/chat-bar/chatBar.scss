@@ -2,6 +2,29 @@
 
 .chat-bar {
   grid-area: chat-bar;
+  @extend .ca;
   height: 100%;
   background-color: $grey-lighter;
+
+  &-header {
+    height: $header-height;
+    background-color: $grey-light;
+    width: 100%;
+  }
+
+  &-center {
+    height: 100%;
+    width: 100%;
+  }
+  &-footer {
+    @extend .rj;
+    height: $footer-height;
+    width: 100%;
+    &-input-container {
+      width: 90%;
+      background-color: rgba(51, 58, 77, 0.516);
+      height: 50px;
+      border-radius: 10px;
+    }
+  }
 }
