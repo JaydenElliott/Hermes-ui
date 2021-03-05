@@ -2,4 +2,9 @@
 .chat-choice-bar {
   grid-area: chat-choice-bar;
   background-color: $grey-light;
+
+  &-header {
+    height: $header-height;
+    border-bottom: $header-dark 2px solid;
+  }
 }

@@ -3,4 +3,9 @@
 .status-bar {
   grid-area: status-bar;
   background-color: $grey-light;
+
+  &-header {
+    height: $header-height;
+    border-bottom: $header-dark 2px solid;
+  }
 }
