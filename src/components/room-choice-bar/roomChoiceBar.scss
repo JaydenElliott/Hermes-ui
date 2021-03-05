@@ -1,0 +1,7 @@
+@import "../common/modules.scss";
+
+.room-choice-bar {
+  grid-area: room-choice-bar;
+  background-color: $grey-dark;
+  height: 100%;
+}

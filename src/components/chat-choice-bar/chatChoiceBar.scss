@@ -1,0 +1,5 @@
+@import "../common/modules.scss";
+.chat-choice-bar {
+  grid-area: chat-choice-bar;
+  background-color: $grey-light;
+}

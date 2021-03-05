@@ -1,0 +1,6 @@
+@import "../common/modules.scss";
+
+.status-bar {
+  grid-area: status-bar;
+  background-color: $grey-light;
+}

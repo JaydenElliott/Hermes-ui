@@ -1,0 +1,8 @@
+@import "./common/modules.scss";
+.homepage {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 75px 235px 1fr 250px;
+  grid-template-areas: "room-choice-bar chat-choice-bar chat-bar status-bar";
+}
