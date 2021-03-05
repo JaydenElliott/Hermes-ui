@@ -21,10 +21,41 @@
     height: $footer-height;
     width: 100%;
     &-input-container {
+      @extend .rja;
       width: 90%;
-      background-color: rgba(51, 58, 77, 0.516);
+      background-color: rgba(51, 58, 77, 0.349);
       height: 50px;
       border-radius: 10px;
+
+      input,
+      form {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        padding-left: 10px;
+        font-size: 15px;
+        color: rgb(198, 198, 198);
+        font-weight: 550;
+      }
+
+      &-send {
+        @extend .button-default;
+        margin-left: auto;
+        color: rgba(198, 198, 198, 0.618);
+      }
+      &-more {
+        @extend .button-default;
+
+        color: rgba(198, 198, 198, 0.618);
+      }
+
+      &-cookie {
+        @extend .button-default;
+        margin-right: 40px;
+        color: rgba(198, 198, 198, 0.618);
+      }
     }
   }
 }
