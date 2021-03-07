@@ -1,8 +1,8 @@
 import wsConfig from "../../config/websocket.json";
 
-class HermesWS {
+export default class HermesWS {
   constructor() {
-    this.ws;
+    this.ws = null;
     this.serveUrl = wsConfig.host;
   }
 
@@ -11,7 +11,7 @@ class HermesWS {
   }
 
   connect() {
-    this.ws = new WebSocket("ws://", this.serveUrl + "/ws");
+    this.ws = new WebSocket("ws://" + wsConfig.host + "/ws");
 
     this.ws.onopen = () => {
       console.log(
@@ -22,6 +22,10 @@ class HermesWS {
 
     this.ws.onclose = (e) => {
       console.log("Websocket connection closed", e.code, e.reason);
+    };
+
+    this.ws.onmessage = (e) => {
+      console.log(e.data);
     };
   }
 }
