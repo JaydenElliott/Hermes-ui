@@ -21,8 +21,29 @@ function ChatBar(props) {
     <div className="chat-bar">
       <Header />
       <div className="chat-bar-center">
-        <Message />
+        <Message message={"Hey Stephen, what's up?"} user={"Jayden Elliott"} />
+        <Message
+          message={"Not alot bro, make arcstack great again"}
+          user={"Stephen Ma"}
+        />
+        <Message
+          message={"Lol nice, message test platform is getting there"}
+          user={"Jayden Elliott"}
+        />
+        <Message message={"..."} user={"Jayden Elliott"} />
+        <Message message={"..."} user={"Jayden Elliott"} />
+        <Message message={"..."} user={"Jayden Elliott"} />
+        <Message message={"..."} user={"Jayden Elliott"} />
+        <Message message={"..."} user={"Jayden Elliott"} />
+        <Message message={"..."} user={"Jayden Elliott"} />
+        <Message message={"..."} user={"Jayden Elliott"} />
+        <Message message={"..."} user={"Jayden Elliott"} />
+        <Message message={"..."} user={"Jayden Elliott"} />
+        <Message message={"..."} user={"Jayden Elliott"} />
+        <Message message={"..."} user={"Jayden Elliott"} />
+        <Message message={"..."} user={"Jayden Elliott"} />
       </div>
+
       <InputBar />
     </div>
   );

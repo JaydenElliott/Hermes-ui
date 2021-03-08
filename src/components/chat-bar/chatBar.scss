@@ -2,20 +2,32 @@
 
 .chat-bar {
   grid-area: chat-bar;
-  @extend .ca;
   height: 100%;
   background-color: $grey-lighter;
 
+  display: grid;
+  grid-template-rows: $header-height 1fr $footer-height;
+  grid-template-areas: "chat-bar-header" "chat-bar-center" "chat-bar-footer";
+  overflow-y: hidden;
+
   &-center {
-    width: 100%;
-    padding-top: 10px;
+    grid-area: chat-bar-center;
+
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
+    flex-direction: column;
+
+    overflow-y: auto;
+
+    width: 100%;
+    // height: 100%;
+
+    padding-top: 10px;
+    padding-bottom: 20px;
   }
 }
 
 .chat-bar-header {
+  grid-area: chat-bar-header;
   @extend .ra;
   height: $header-height;
   background-color: $grey-light;
@@ -69,6 +81,7 @@
 }
 
 .chat-bar-footer {
+  grid-area: chat-bar-footer;
   @extend .rj;
   height: $footer-height;
   margin-top: auto;

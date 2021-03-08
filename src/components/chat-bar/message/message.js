@@ -22,12 +22,10 @@ function Message(props) {
       </div>
       <div className="ui-message-content">
         <div className="ui-message-content-title-date">
-          <div className="ui-message-content-title-date-name">
-            Jayden Elliott
-          </div>
+          <div className="ui-message-content-title-date-name">{props.user}</div>
           <div className="ui-message-content-title-date-date">8/03/2021</div>
         </div>
-        <div className="ui-message-content-content">Hey Stephen What Up?</div>
+        <div className="ui-message-content-content">{props.message}</div>
       </div>
     </div>
   );
