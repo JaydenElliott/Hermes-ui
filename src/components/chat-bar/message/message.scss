@@ -1,0 +1,48 @@
+@import "../../common/modules.scss";
+
+.ui-message {
+  @extend .ra;
+  width: 100%;
+
+  border-top: 1px solid $grey-light;
+  padding-top: 15px;
+
+  &-avatar {
+    margin-left: 20px;
+    color: rgba(216, 216, 216, 0.774);
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+
+    &-title-date {
+      @extend .rj;
+
+      &-name {
+        color: rgb(218, 218, 218);
+        font-weight: 600;
+      }
+
+      &-date {
+        color: rgba(143, 143, 143, 0.774);
+        margin-left: 5px;
+      }
+    }
+
+    &-content {
+      color: white;
+    }
+  }
+}
+
+// <div className="message">
+// <div className="message-avatar"></div>
+// <div className="message-title-date">
+//   <div className="message-title-date-name"></div>
+//   <div className="message-title-date-date"></div>
+// </div>
+// <div className="message-content"></div>
+// </div>

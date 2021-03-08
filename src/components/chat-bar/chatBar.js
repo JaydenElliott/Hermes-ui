@@ -1,6 +1,9 @@
 // External Components
 import React, { useState } from "react";
 
+// Intenral Components
+import Message from "./message/message";
+
 // Styling
 import "./chatBar.scss";
 
@@ -17,7 +20,9 @@ function ChatBar(props) {
   return (
     <div className="chat-bar">
       <Header />
-      <div className="chat-bar-center"></div>
+      <div className="chat-bar-center">
+        <Message />
+      </div>
       <InputBar />
     </div>
   );
@@ -82,27 +87,9 @@ function InputBar(props) {
         <form>
           <input placeholder="Type a message ..." />
         </form>
-        <button className="chat-bar-footer-input-container-send">
-          <FontAwesomeIcon
-            icon={faPaperPlane}
-            style={{
-              width: "17px",
-              height: "17px",
-            }}
-          />
-        </button>
         <button className="chat-bar-footer-input-container-more">
           <FontAwesomeIcon
             icon={faPaperclip}
-            style={{
-              width: "17px",
-              height: "17px",
-            }}
-          />
-        </button>
-        <button className="chat-bar-footer-input-container-cookie">
-          <FontAwesomeIcon
-            icon={faCookieBite}
             style={{
               width: "17px",
               height: "17px",
