@@ -1,5 +1,5 @@
 // External Components
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Intenral Components
 import Message from "./message/message";
@@ -17,10 +17,13 @@ import { faVideo } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 function ChatBar(props) {
+  useEffect(() => {
+    messageScrollToBottom();
+  }, []);
   return (
     <div className="chat-bar">
       <Header />
-      <div className="chat-bar-center">
+      <div className="chat-bar-center" id="chat-bar-center">
         <Message message={"Hey Stephen, what's up?"} user={"Jayden Elliott"} />
         <Message
           message={"Not alot bro, make arcstack great again"}
@@ -33,20 +36,18 @@ function ChatBar(props) {
         <Message message={"..."} user={"Jayden Elliott"} />
         <Message message={"..."} user={"Jayden Elliott"} />
         <Message message={"..."} user={"Jayden Elliott"} />
-        <Message message={"..."} user={"Jayden Elliott"} />
-        <Message message={"..."} user={"Jayden Elliott"} />
-        <Message message={"..."} user={"Jayden Elliott"} />
-        <Message message={"..."} user={"Jayden Elliott"} />
-        <Message message={"..."} user={"Jayden Elliott"} />
-        <Message message={"..."} user={"Jayden Elliott"} />
-        <Message message={"..."} user={"Jayden Elliott"} />
-        <Message message={"..."} user={"Jayden Elliott"} />
-        <Message message={"..."} user={"Jayden Elliott"} />
       </div>
 
       <InputBar />
     </div>
   );
+}
+
+/* Utility function to scroll the message to bottom on page load */
+function messageScrollToBottom() {
+  var messageBody = document.getElementById("chat-bar-center");
+  console.log(messageBody);
+  messageBody.scrollTop = messageBody.scrollHeight - messageBody.clientHeight;
 }
 
 function Header(props) {
