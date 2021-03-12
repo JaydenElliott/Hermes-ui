@@ -15,8 +15,9 @@ import { faPaperclip,faPhone, faVideo, faSearch } from "@fortawesome/free-solid-
 function ChatBar(props) {
   const userInfo = useContext(UserContext);
   useEffect(() => {
+    console.log("hi");
     messageScrollToBottom();
-  }, []);
+  });
   return (
     <div className="chat-bar">
       <Header />
