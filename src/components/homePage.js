@@ -22,7 +22,12 @@ function HomePage(props) {
     wsHandler.connect();
   }, []);
   return (
-    <UserContext.Provider value={{ username: username, messages: messages }}>
+    <UserContext.Provider
+      value={{
+        username: { state: username, func: setUsername },
+        messages: { state: messages, func: setMessages },
+      }}
+    >
       <div className="homepage">
         <RoomChoiceBar />
         <ChatChoiceBar />

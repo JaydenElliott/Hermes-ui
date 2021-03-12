@@ -10,12 +10,7 @@ import "./chatBar.scss";
 
 // Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-import { faPaperclip } from "@fortawesome/free-solid-svg-icons";
-import { faCookieBite } from "@fortawesome/free-solid-svg-icons";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import { faVideo } from "@fortawesome/free-solid-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faPaperclip,faPhone, faVideo, faSearch } from "@fortawesome/free-solid-svg-icons"; // prettier-ignore
 
 function ChatBar(props) {
   const userInfo = useContext(UserContext);
@@ -25,17 +20,12 @@ function ChatBar(props) {
   return (
     <div className="chat-bar">
       <Header />
-      <div className="chat-bar-center" id="chat-bar-center">
-        {console.log("chatbar", userInfo)}
-        <Message message={"asdfasdfasdfas"} user={userInfo.username} />
-        <Message message={"..."} user={userInfo.username} />
-        <Message message={"..."} user={userInfo.username} />
-        <Message message={"..."} user={userInfo.username} />
-        <Message message={"..."} user={userInfo.username} />
-        <Message message={"..."} user={userInfo.username} />
-        <Message message={"..."} user={userInfo.username} />
-      </div>
 
+      <div className="chat-bar-center" id="chat-bar-center">
+        {userInfo.messages.state.map((msg) => {
+          return <Message message={msg} user={userInfo.username.state} />;
+        })}
+      </div>
       <InputBar />
     </div>
   );
@@ -44,7 +34,6 @@ function ChatBar(props) {
 /* Utility function to scroll the message to bottom on page load */
 function messageScrollToBottom() {
   var messageBody = document.getElementById("chat-bar-center");
-  console.log(messageBody);
   messageBody.scrollTop = messageBody.scrollHeight - messageBody.clientHeight;
 }
 
@@ -100,12 +89,26 @@ function Header(props) {
   );
 }
 
-function InputBar(props) {
+function InputBar() {
+  const [msg, setMsg] = useState("");
+  const userInfo = useContext(UserContext);
+  const sendMessage = (e) => {
+    e.preventDefault();
+    let newMsgs = [...userInfo.messages.state, msg];
+    userInfo.messages.func(newMsgs);
+    setMsg("");
+  };
   return (
     <div className="chat-bar-footer">
       <div className="chat-bar-footer-input-container">
-        <form>
-          <input placeholder="Type a message ..." />
+        <form onSubmit={sendMessage}>
+          <input
+            placeholder="Type a message ..."
+            value={msg}
+            onChange={(e) => {
+              setMsg(e.currentTarget.value);
+            }}
+          />
         </form>
         <button className="chat-bar-footer-input-container-more">
           <FontAwesomeIcon
