@@ -25,7 +25,8 @@ export default class HermesWS {
     };
 
     this.ws.onmessage = (e) => {
-      console.log(e.data);
+      let data = e.data;
+      console.log(data);
     };
   }
 }

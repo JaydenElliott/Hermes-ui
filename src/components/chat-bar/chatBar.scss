@@ -23,6 +23,14 @@
 
     padding-top: 10px;
     padding-bottom: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    /* justify-content: flex-end; DO NOT USE: breaks scrolling */
+
+    & > :first-child {
+      margin-top: auto !important;
+    }
   }
 }
 

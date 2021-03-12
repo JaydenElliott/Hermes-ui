@@ -22,6 +22,7 @@ function Message(props) {
       </div>
       <div className="ui-message-content">
         <div className="ui-message-content-title-date">
+          {console.log(props)}
           <div className="ui-message-content-title-date-name">{props.user}</div>
           <div className="ui-message-content-title-date-date">8/03/2021</div>
         </div>
